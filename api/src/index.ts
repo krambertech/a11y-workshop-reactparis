@@ -27,7 +27,7 @@ app.use(
     credentials: true,
     exposedHeaders: ["Content-Length", "Content-Type", "Authorization"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  })
+  }),
 );
 
 app.use(express.json());

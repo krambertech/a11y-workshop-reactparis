@@ -7,6 +7,9 @@ import { useAuth } from "../helpers/auth";
 import { useLogin } from "../helpers/queries";
 import { Button } from "../components/ui/Button";
 import { Input } from "../components/ui/Input";
+import { useId } from "react";
+import { CircleX } from "lucide-react";
+import { Banner } from "../components/ui/Banner";
 
 // schema used for validation
 const loginSchema = z.object({
@@ -18,6 +21,9 @@ const loginSchema = z.object({
 });
 
 export function Login() {
+  const usernameId = useId();
+  const passwordId = useId();
+
   const [searchParams] = useSearchParams();
   const { isAuthenticated } = useAuth();
   const login = useLogin();
@@ -26,7 +32,7 @@ export function Login() {
     register,
     handleSubmit,
     // ⇩ to access validation errors
-    // formState: { errors },
+    formState: { errors },
   } = useForm({
     resolver: zodResolver(loginSchema),
   });
@@ -44,12 +50,52 @@ export function Login() {
       <h1>Log in</h1>
       <p>Log in to your account to continue</p>
 
-      <div className="flex flex-col gap-md align-start">
-        <Input {...register("username")} placeholder="Username" />
-        <Input {...register("password")} placeholder="Password" />
+      {login.error && (
+        <Banner variant="error" role="alert">
+          <strong>Could not login:</strong> {login.error.message}
+        </Banner>
+      )}
 
-        <Button onClick={submit}>Log in</Button>
-      </div>
+      <form onSubmit={submit}>
+        <div className="field">
+          <label htmlFor={usernameId}>Username</label>
+          <Input
+            {...register("username")}
+            placeholder="Manon"
+            id={usernameId}
+            autoComplete="username"
+            aria-required="true"
+            aria-invalid={!!errors?.username?.message}
+            aria-describedby={`${usernameId}-error`}
+          />
+          {errors?.username?.message && (
+            <p className="error" role="alert" id={`${usernameId}-error`}>
+              <CircleX aria-hidden></CircleX> {errors?.username?.message}
+            </p>
+          )}
+        </div>
+
+        <div className="field">
+          <label htmlFor={passwordId}>Password</label>
+          <Input
+            {...register("password")}
+            placeholder="isecretlylove50cent"
+            type="password"
+            id={passwordId}
+            autoComplete="password"
+            aria-required="true"
+            aria-invalid={!!errors?.password?.message}
+            aria-describedby={`${passwordId}-error`}
+          />
+          {errors?.password?.message && (
+            <p className="error" role="alert" id={`${passwordId}-error`}>
+              <CircleX aria-hidden></CircleX> {errors?.password?.message}
+            </p>
+          )}
+        </div>
+
+        <Button>Log in</Button>
+      </form>
     </div>
   );
 }

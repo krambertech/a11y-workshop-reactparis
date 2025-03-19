@@ -13,7 +13,7 @@ const apiErrorSchema = z.object({
     z.object({
       path: z.array(z.string()),
       message: z.string(),
-    })
+    }),
   ),
 });
 
@@ -43,7 +43,7 @@ export type ApiRequestOptions<TBody = unknown> = {
 };
 
 async function parseErrorResponse(
-  response: Response
+  response: Response,
 ): Promise<ApiValidationError | Error> {
   try {
     const errorData = await response.json();
@@ -72,7 +72,7 @@ async function parseErrorResponse(
  */
 export async function apiRequest<TResponse, TBody = unknown>(
   endpoint: string,
-  options: ApiRequestOptions<TBody> = {}
+  options: ApiRequestOptions<TBody> = {},
 ): Promise<TResponse> {
   const {
     method = "GET",

@@ -40,6 +40,10 @@
     cursor: not-allowed;
     background-color: var(--gray-2);
   }
+
+  &[aria-invalid="true"] {
+    --input-border: var(--destructive-9);
+  }
 }
 
 .icon {

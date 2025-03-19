@@ -14,7 +14,7 @@ const createTestApp = () => {
 };
 
 function mockGitHubProfile(
-  profile: Partial<GithubProfile> = {}
+  profile: Partial<GithubProfile> = {},
 ): GithubProfile {
   return {
     avatar_url: "https://example.com/avatar.png",
@@ -44,7 +44,7 @@ beforeEach(() => {
   db.clear();
 
   (fetchGitHubProfile as ReturnType<typeof vi.fn>).mockResolvedValue(
-    mockGitHubProfile()
+    mockGitHubProfile(),
   );
 });
 
@@ -93,7 +93,7 @@ describe("POST /register", () => {
   it("should return 400 if GitHub profile not found", async () => {
     // Mock GitHub API response for non-existent user
     (fetchGitHubProfile as ReturnType<typeof vi.fn>).mockResolvedValueOnce(
-      null
+      null,
     );
 
     const app = createTestApp();
@@ -159,7 +159,7 @@ describe("POST /login", () => {
     expect(response.status).toBe(401);
     expect(response.body).toHaveProperty(
       "error",
-      "Invalid username or password"
+      "Invalid username or password",
     );
   });
 
@@ -182,7 +182,7 @@ describe("POST /login", () => {
     expect(loginResponse.status).toBe(401);
     expect(loginResponse.body).toHaveProperty(
       "error",
-      "Invalid username or password"
+      "Invalid username or password",
     );
   });
 });

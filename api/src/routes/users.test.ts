@@ -71,14 +71,14 @@ describe("GET /users", () => {
     expect(response.status).toBe(200);
     expect(Array.isArray(response.body)).toBe(true);
     expect(response.body.length).toBe(2);
-    
+
     // Check that the response contains the created users (without passwords)
     const userIds = response.body.map((user: User) => user.id);
     if (user1.ok && user2.ok) {
       expect(userIds).toContain(user1.data.id);
       expect(userIds).toContain(user2.data.id);
     }
-    
+
     // Verify no passwords are returned
     response.body.forEach((user: User) => {
       expect(user).not.toHaveProperty("password");
@@ -102,12 +102,12 @@ describe("GET /users/:id", () => {
     });
 
     expect(createResult.ok).toBe(true);
-    
+
     // Only proceed if user creation was successful
     if (!createResult.ok) {
       throw new Error("Failed to create test user");
     }
-    
+
     const userId = createResult.data.id;
 
     const app = createTestApp();

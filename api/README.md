@@ -27,11 +27,11 @@ Check if the API server is running and healthy.
 }
 ```
 
-| Field | Type | Description |
-|-------|------|-------------|
-| status | string | Server status ("ok" or "error") |
-| timestamp | string | Current server time in ISO format |
-| message | string | Optional message (only present in error responses) |
+| Field     | Type   | Description                                        |
+| --------- | ------ | -------------------------------------------------- |
+| status    | string | Server status ("ok" or "error")                    |
+| timestamp | string | Current server time in ISO format                  |
+| message   | string | Optional message (only present in error responses) |
 
 #### Error Response (500 Internal Server Error)
 
@@ -93,6 +93,7 @@ Register a new user with GitHub username and password.
 ```
 
 #### Errors
+
 - `400 Bad Request` - Invalid input or username taken
 - `400 Bad Request` - GitHub profile not found
 - `500 Internal Server Error` - Server error
@@ -141,6 +142,7 @@ Login with username and password.
 ```
 
 #### Errors
+
 - `400 Bad Request` - Validation failed
 - `401 Unauthorized` - Invalid username or password
 - `500 Internal Server Error` - Failed to log in
@@ -154,11 +156,13 @@ POST /api/auth/logout
 Logout the current user by invalidating their token.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Response
+
 - `204 No Content` - Successfully logged out
 - `400 Bad Request` - Invalid token format
 - `500 Internal Server Error` - Failed to log out
@@ -172,6 +176,7 @@ GET /api/auth/me
 Get the current user's profile.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
@@ -200,6 +205,7 @@ Authorization: Bearer <token>
 ```
 
 #### Errors
+
 - `401 Unauthorized` - Invalid token
 - `404 Not Found` - User not found
 - `500 Internal Server Error` - Failed to get user profile
@@ -213,11 +219,13 @@ DELETE /api/auth/me
 Delete the current user's account.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Response
+
 - `204 No Content` - Successfully deleted
 - `404 Not Found` - User not found
 - `500 Internal Server Error` - Failed to delete user
@@ -252,13 +260,14 @@ Get a list of all users.
     followingCount: number,
     githubProfileCreatedAt: string,
     createdAt: string,
-    updatedAt: string
+    updatedAt: string,
   },
   // ...more users
-]
+];
 ```
 
 #### Errors
+
 - `500 Internal Server Error` - Failed to get users
 
 ### Get User by ID
@@ -270,6 +279,7 @@ GET /api/users/:id
 Get a specific user by their ID.
 
 #### Parameters
+
 - `id` - User ID
 
 #### Response (200 OK)
@@ -296,6 +306,7 @@ Get a specific user by their ID.
 ```
 
 #### Errors
+
 - `404 Not Found` - User not found
 - `500 Internal Server Error` - Failed to get user
 
@@ -310,6 +321,7 @@ POST /api/tils
 Create a new TIL entry.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
@@ -341,6 +353,7 @@ Authorization: Bearer <token>
 ```
 
 #### Errors
+
 - `400 Bad Request` - Validation failed
 - `401 Unauthorized` - Invalid token
 - `500 Internal Server Error` - Failed to create TIL
@@ -354,11 +367,13 @@ GET /api/tils
 Get all TILs or filter by user ID or saved status.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Query Parameters
+
 - `userId` (optional) - Filter TILs by user ID
 - `saved` (optional) - Set to "true" to get only TILs saved by the current user
 
@@ -376,13 +391,14 @@ Authorization: Bearer <token>
     saved: boolean,
     user: {
       // User object (same structure as above)
-    }
+    },
   },
   // ...more TILs
-]
+];
 ```
 
 #### Errors
+
 - `400 Bad Request` - Invalid query parameters
 - `401 Unauthorized` - Invalid token
 - `500 Internal Server Error` - Failed to get TILs
@@ -396,11 +412,13 @@ GET /api/tils/:id
 Get a specific TIL by ID.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Parameters
+
 - `id` - TIL ID
 
 #### Response (200 OK)
@@ -421,6 +439,7 @@ Authorization: Bearer <token>
 ```
 
 #### Errors
+
 - `401 Unauthorized` - Invalid token
 - `404 Not Found` - TIL not found
 - `500 Internal Server Error` - Failed to get TIL
@@ -434,11 +453,13 @@ PUT /api/tils/:id
 Update a TIL by ID. Only the owner can update their TIL.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Parameters
+
 - `id` - TIL ID
 
 #### Request Body
@@ -468,6 +489,7 @@ Authorization: Bearer <token>
 ```
 
 #### Errors
+
 - `400 Bad Request` - Validation failed
 - `401 Unauthorized` - Invalid token
 - `403 Forbidden` - Not the owner of the TIL
@@ -483,14 +505,17 @@ DELETE /api/tils/:id
 Delete a TIL by ID. Only the owner can delete their TIL.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Parameters
+
 - `id` - TIL ID
 
 #### Response
+
 - `204 No Content` - Successfully deleted
 - `401 Unauthorized` - Invalid token
 - `403 Forbidden` - Not the owner of the TIL
@@ -506,11 +531,13 @@ POST /api/tils/:id/save
 Save a TIL for the current user.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Parameters
+
 - `id` - TIL ID
 
 #### Response (200 OK)
@@ -531,6 +558,7 @@ Authorization: Bearer <token>
 ```
 
 #### Errors
+
 - `401 Unauthorized` - Invalid token
 - `404 Not Found` - TIL not found
 - `400 Bad Request` - Failed to save TIL
@@ -545,11 +573,13 @@ DELETE /api/tils/:id/save
 Unsave a TIL for the current user.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Parameters
+
 - `id` - TIL ID
 
 #### Response (200 OK)
@@ -570,6 +600,7 @@ Authorization: Bearer <token>
 ```
 
 #### Errors
+
 - `401 Unauthorized` - Invalid token
 - `404 Not Found` - TIL not found or not saved
 - `400 Bad Request` - Failed to unsave TIL
@@ -584,22 +615,25 @@ GET /api/tils/:id/saved
 Check if a TIL is saved by the current user.
 
 #### Headers
+
 ```http
 Authorization: Bearer <token>
 ```
 
 #### Parameters
+
 - `id` - TIL ID
 
 #### Response (200 OK)
 
 ```typescript
 {
-  saved: boolean
+  saved: boolean;
 }
 ```
 
 #### Errors
+
 - `401 Unauthorized` - Invalid token
 - `404 Not Found` - TIL not found
 - `400 Bad Request` - Failed to check if TIL is saved

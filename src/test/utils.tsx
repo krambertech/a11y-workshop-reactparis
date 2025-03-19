@@ -21,7 +21,7 @@ const queryClient = new QueryClient({
 
 const render = (
   ui: React.ReactElement,
-  options?: RTL.RenderOptions
+  options?: RTL.RenderOptions,
 ): RenderReturnType => {
   const user = userEvent.setup();
 

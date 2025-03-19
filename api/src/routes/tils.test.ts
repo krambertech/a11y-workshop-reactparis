@@ -56,7 +56,7 @@ const createTestTil = async (
   tilData = {
     title: "Test TIL",
     content: "This is a test TIL content",
-  }
+  },
 ) => {
   const response = await supertest(app)
     .post("/tils")
@@ -483,7 +483,7 @@ describe("DELETE /tils/:id", () => {
     expect(response.status).toBe(403);
     expect(response.body).toHaveProperty(
       "error",
-      "You can only delete your own TILs"
+      "You can only delete your own TILs",
     );
 
     // Verify TILs were not deleted
@@ -538,7 +538,7 @@ describe("TIL Saving/Unsaving", () => {
     expect(saveResponse.status).toBe(200);
     expect(saveResponse.body).toHaveProperty(
       "message",
-      "TIL saved successfully"
+      "TIL saved successfully",
     );
 
     // Verify the TIL is saved by checking the saved status

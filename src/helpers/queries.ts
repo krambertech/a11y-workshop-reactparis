@@ -55,7 +55,7 @@ export function useUsers() {
  * Hook to create a new TIL
  */
 export function useCreateTil(
-  options?: UseMutationOptions<Til, Error, TilInput>
+  options?: UseMutationOptions<Til, Error, TilInput>,
 ) {
   const queryClient = useQueryClient();
 

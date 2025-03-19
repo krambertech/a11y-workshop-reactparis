@@ -274,7 +274,9 @@ img {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform 700ms ease, box-shadow 700ms ease;
+  transition:
+    transform 700ms ease,
+    box-shadow 700ms ease;
   position: relative;
 }
 
@@ -315,7 +317,9 @@ img {
   position: relative;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 300ms ease, transform 300ms ease;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease;
 }
 
 .disability-card:hover .learn-more {

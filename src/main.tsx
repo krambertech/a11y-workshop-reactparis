@@ -30,5 +30,5 @@ createRoot(document.getElementById("root")!).render(
         </AuthProvider>
       </QueryClientProvider>
     </ErrorBoundary>
-  </StrictMode>
+  </StrictMode>,
 );

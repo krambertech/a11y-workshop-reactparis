@@ -90,7 +90,7 @@ router.get("/", authMiddleware, (req: Request, res: Response) => {
 
       // Process each TIL to add saved status and user info
       const processedTils = savedResult.data.map((til) =>
-        expandTil(til, req.userId)
+        expandTil(til, req.userId),
       );
 
       return res.status(200).json(processedTils);

@@ -288,7 +288,7 @@ Use msw to mock the API responses.
 server.use(
   http.post("/api/auth/register", async () => {
     return HttpResponse.json(mockUser({ username: "username" }));
-  })
+  }),
 );
 ```
 

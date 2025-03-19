@@ -111,7 +111,7 @@ const sanitizeUser = (user: InternalUser): User => {
 
 const users = {
   create: (
-    user: Omit<InternalUser, "id" | "createdAt" | "updatedAt">
+    user: Omit<InternalUser, "id" | "createdAt" | "updatedAt">,
   ): Result<User> => {
     try {
       const userId = uuidv4();
@@ -139,7 +139,7 @@ const users = {
       }
 
       const usernameExists = Array.from(store.users.values()).some(
-        (u) => u.username === validUser.data.username
+        (u) => u.username === validUser.data.username,
       );
 
       if (usernameExists) {
@@ -208,7 +208,7 @@ const users = {
 
   getByUsername: (username: string): Result<User> => {
     const user = Array.from(store.users.values()).find(
-      (u) => u.username === username
+      (u) => u.username === username,
     );
 
     if (!user) {
@@ -366,7 +366,7 @@ const tils = {
     ok: true,
     data: Array.from(store.tils.values()).sort(
       (a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
     ),
   }),
 
@@ -378,7 +378,7 @@ const tils = {
       .filter((til) => til.userId === userId)
       .sort(
         (a, b) =>
-          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
       ),
   }),
 
@@ -535,7 +535,7 @@ const tils = {
     // Sort savedTils by createdAt in descending order (newest first)
     savedTils.sort(
       (a, b) =>
-        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
     );
 
     return { ok: true, data: savedTils };

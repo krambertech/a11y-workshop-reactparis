@@ -18,7 +18,7 @@ export const GithubProfileSchema = z.object({
 export type GithubProfile = z.infer<typeof GithubProfileSchema>;
 
 export async function fetchGitHubProfile(
-  username: string
+  username: string,
 ): Promise<GithubProfile | null> {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`);

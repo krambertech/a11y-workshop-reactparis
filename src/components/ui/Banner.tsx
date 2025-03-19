@@ -4,6 +4,7 @@ import { ComponentProps } from "react";
 import clsx from "clsx";
 
 import styles from "./Banner.module.css";
+import { CircleX } from "lucide-react";
 
 export type BannerProps = ComponentProps<"div"> & {
   /**
@@ -25,6 +26,7 @@ export function Banner({
       data-variant={variant}
       {...props}
     >
+      {variant === "error" && <CircleX aria-hidden />}
       {children}
     </div>
   );

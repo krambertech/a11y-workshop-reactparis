@@ -35,7 +35,7 @@ export function MainNav({ className, ...props }: ComponentProps<"div">) {
             onClick={() =>
               window.open(
                 "https://github.com/krambertech/a11y-workshop",
-                "_blank"
+                "_blank",
               )
             }
           >
