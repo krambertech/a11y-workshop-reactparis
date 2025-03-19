@@ -20,7 +20,8 @@ test('should render loading state when fetching tils', async () => {
 
   const loadingState = screen.getByText(/Loading/i);
   expect(loadingState).toBeInTheDocument();
-  screen.debug();
+
+  //screen.debug();
 });
 
 test.todo('should render error state when fetching tils fails');
