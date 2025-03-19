@@ -1,6 +1,6 @@
-import { LoaderCircle } from "lucide-react";
+import { LoaderCircle } from 'lucide-react';
 
-import styles from "./LoadingState.module.css";
+import styles from './LoadingState.module.css';
 
 /**
  * Loading state component
@@ -8,7 +8,7 @@ import styles from "./LoadingState.module.css";
  */
 export function LoadingState() {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} role="status">
       <LoaderCircle /> <span>Loading...</span>
     </div>
   );

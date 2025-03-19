@@ -1,6 +1,8 @@
-import { createContext, use, useState } from "react";
+import { createContext, use, useState } from 'react';
 
-// import styles from "./Toast.module.css";
+import styles from './Toast.module.css';
+import { X } from 'lucide-react';
+import { IconButton } from './Button';
 
 type Toast = {
   id: string;
@@ -47,18 +49,38 @@ export function useToastState() {
   const value = use(ToastContext);
 
   if (!value) {
-    throw new Error("useToaster must be used within a ToastProvider");
+    throw new Error('useToaster must be used within a ToastProvider');
   }
 
   return value;
 }
 
-function Toast() {
+function Toast(props: Toast) {
+  const state = useToastState();
   // need to implement this
-  return <div />;
+  return (
+    <li role="alert" className={styles.toast}>
+      {props.message}
+      <IconButton
+        variant="ghost"
+        label="Close"
+        className={styles.close}
+        onClick={() => state.removeToast(props.id)}
+      >
+        <X />
+      </IconButton>
+    </li>
+  );
 }
 
 export function Toaster() {
-  // and this
-  return <div />;
+  const { toasts } = useToastState();
+
+  return (
+    <ul className={styles.toaster} role="region" aria-label="Notifications">
+      {toasts.map(({ ...props }) => (
+        <Toast key={props.id} {...props} />
+      ))}
+    </ul>
+  );
 }

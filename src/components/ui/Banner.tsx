@@ -1,21 +1,21 @@
-import { ComponentProps } from "react";
+import { ComponentProps } from 'react';
 // ⇩ icons
 // import { CircleX, CheckCircle, Info } from "lucide-react";
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import styles from "./Banner.module.css";
-import { CircleX } from "lucide-react";
+import styles from './Banner.module.css';
+import { Check, CheckCircle, CircleX } from 'lucide-react';
 
-export type BannerProps = ComponentProps<"div"> & {
+export type BannerProps = ComponentProps<'div'> & {
   /**
    * The visual style variant of the banner
    * @default "info"
    */
-  variant?: "error" | "success" | "info";
+  variant?: 'error' | 'success' | 'info';
 };
 
 export function Banner({
-  variant = "info",
+  variant = 'info',
   className,
   children,
   ...props
@@ -26,7 +26,8 @@ export function Banner({
       data-variant={variant}
       {...props}
     >
-      {variant === "error" && <CircleX aria-hidden />}
+      {variant === 'error' && <CircleX aria-hidden />}
+      {variant === 'success' && <CheckCircle aria-hidden />}
       {children}
     </div>
   );

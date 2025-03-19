@@ -52,7 +52,7 @@ export function Login() {
 
       {login.error && (
         <Banner variant="error" role="alert">
-          <strong>Could not login:</strong> {login.error.message}
+          <strong>Could not log in:</strong> {login.error.message}
         </Banner>
       )}
 
@@ -70,7 +70,7 @@ export function Login() {
           />
           {errors?.username?.message && (
             <p className="error" role="alert" id={`${usernameId}-error`}>
-              <CircleX aria-hidden></CircleX> {errors?.username?.message}
+              <CircleX aria-hidden /> {errors?.username?.message}
             </p>
           )}
         </div>
@@ -89,7 +89,7 @@ export function Login() {
           />
           {errors?.password?.message && (
             <p className="error" role="alert" id={`${passwordId}-error`}>
-              <CircleX aria-hidden></CircleX> {errors?.password?.message}
+              <CircleX aria-hidden /> {errors?.password?.message}
             </p>
           )}
         </div>

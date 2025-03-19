@@ -34,6 +34,14 @@
     outline-offset: 1px;
   }
 
+  &[aria-current='page'] {
+    background-color: color-mix(
+      in oklch,
+      var(--button-background),
+      var(--text) 6%
+    );
+  }
+
   &:active {
     background-color: color-mix(
       in oklch,

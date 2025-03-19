@@ -27,14 +27,14 @@
   display: flex;
   gap: var(--space-sm);
   /* ⇩ to remove list styling */
-  /* list-style: none;
+  list-style: none;
   margin: 0;
   padding: 0;
 
   li {
     margin: 0;
     padding: 0;
-  } */
+  }
 }
 
 .auth {
@@ -44,7 +44,7 @@
 }
 
 /* ⇩ skip link styles */
-/* .skipLink {
+.skipLink {
   position: fixed;
   top: var(--space-md);
   left: var(--space-md);
@@ -71,4 +71,4 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
-} */
+}
