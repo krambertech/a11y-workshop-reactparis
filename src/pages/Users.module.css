@@ -1,0 +1,43 @@
+.user {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "avatar name"
+    "avatar subtitle";
+  grid-gap: 0 var(--space-md);
+  align-items: center;
+  width: 100%;
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+
+  &:hover {
+    .actions {
+      opacity: 1;
+    }
+  }
+
+  > img {
+    grid-area: avatar;
+  }
+
+  > h2 {
+    grid-area: name;
+  }
+
+  > p {
+    grid-area: subtitle;
+  }
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: var(--space-md);
+  display: flex;
+  gap: var(--space-xs);
+  opacity: 0;
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Accessibility Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation with low contrast and missing landmarks -->
+    <header class="nav">
+      <div class="logo">A11y Hub</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#disabilities">Disabilities</a>
+        <a href="#advantages">Why It Matters</a>
+        <a href="#newsletter">Newsletter</a>
+      </div>
+      <div class="social">
+        <a href="#" class="social-link social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="social-link social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="social-link social-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <div class="hero" id="home">
+      <div class="hero-content">
+        <h2 class="hero-heading">Creating a Web That Works For Everyone</h2>
+        <p class="hero-text">
+          Learn how to make your websites accessible and inclusive for all
+          users, regardless of their abilities or disabilities.
+        </p>
+
+        <!-- Hero signup form -->
+        <div class="hero-search">
+          <div class="search-container">
+            <div class="search-box wide">
+              <input type="email" placeholder="Enter your email address" />
+            </div>
+            <div class="search-button">Get Free Resources</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Types of Disabilities section -->
+    <div class="disabilities" id="disabilities">
+      <h1 class="disabilities-heading">
+        Understanding Different Types of Disabilities
+      </h1>
+      <div class="disability-cards">
+        <div class="disability-card">
+          <img
+            src="https://images.unsplash.com/photo-1574887467771-684837ef363a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h5 class="disability-card-heading">Visual Disabilities</h5>
+          <p>
+            Need a larger screen? A brighter screen? A narrator to read text?
+            Find out about accessibility tools and features for people who are
+            blind, color blind, or have low vision.
+          </p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+        <div class="disability-card">
+          <img
+            src="https://images.unsplash.com/photo-1623376550324-d406ae677c04?q=80&w=2545&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h5 class="disability-card-heading">Hearing Disabilities</h5>
+          <p>
+            For those who are hard of hearing, have hearing loss, or have
+            deafness, our specialized features can provide solutions including
+            closed captioning, mono sound, and live call transcription.
+          </p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+        <div class="disability-card">
+          <img
+            src="https://images.unsplash.com/photo-1687360440922-b8e41c84ea99?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h5 class="disability-card-heading">Neurodiversity</h5>
+          <p>
+            Innovative tools such as dictation and sign-in can make the digital
+            world more accessible for those with dyslexia, seizures, autism, or
+            other cognitive differences.
+          </p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+        <div class="disability-card">
+          <img
+            src="https://images.unsplash.com/photo-1560785496-3c9d27877182?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h5 class="disability-card-heading">Learning Disabilities</h5>
+          <p>
+            Our applications for people living with learning disabilities can
+            help increase focus, concentration, and understanding—and include
+            tools to improve reading and writing skills.
+          </p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+        <div class="disability-card">
+          <img
+            src="https://images.unsplash.com/photo-1556343405-79c5caffbf41?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <h5 class="disability-card-heading">Mobility Disabilities</h5>
+          <p>
+            Our suite of products helps people living with arthritis,
+            quadriplegia, spinal cord injuries, and other mobility issues to
+            navigate the digital world in new ways.
+          </p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+        <div class="disability-card">
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+          />
+          <h5 class="disability-card-heading">Mental Health</h5>
+          <p>
+            Learn more about assistive technologies for people living with
+            issues such as bipolar disorder, anxiety, PTSD, depression, or ADHD.
+            Our products can help reduce distraction and improve concentration
+            and reading.
+          </p>
+          <a href="#" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advantages section with disclosure widgets -->
+    <div class="advantages" id="advantages">
+      <h1 class="advantages-heading">Why Accessibility Matters</h1>
+      <div class="advantage-item">
+        <div class="disclosure-header">⚖️ Legal Requirements & Compliance</div>
+        <div class="content">
+          <p>
+            Many countries have laws and regulations requiring websites to be
+            accessible. Non-compliance can lead to legal issues and penalties.
+          </p>
+          <ul>
+            <li>
+              🇺🇸
+              <a href="https://www.ada.gov/"
+                >ADA (Americans with Disabilities Act)</a
+              >
+              in the United States
+            </li>
+            <li>
+              🇪🇺
+              <a
+                href="https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en"
+                >EAA (European Accessibility Act)</a
+              >
+              in the European Union
+            </li>
+            <li>
+              🇬🇧
+              <a
+                href="https://www.gov.uk/government/publications/equality-act-2010-guidance-for-businesses/equality-act-2010-guidance-for-businesses"
+                >Equality Act 2010</a
+              >
+              in the United Kingdom
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="advantage-item">
+        <div class="disclosure-header">💼 Business & Market Benefits</div>
+        <div class="content">
+          <p>
+            Accessible websites reach more customers and provide better user
+            experience for everyone, not just those with disabilities.
+          </p>
+          <ul>
+            <li>
+              🌍 Increased market reach (15-20% of the population has a
+              disability)
+            </li>
+            <li>🔍 Better SEO and search visibility</li>
+            <li>⭐ Enhanced brand reputation and social responsibility</li>
+            <li>
+              📱 Improved user experience for all users, including those on
+              mobile devices
+            </li>
+            <li>📈 Higher conversion rates and reduced support costs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="advantage-item">
+        <div class="disclosure-header">🛠️ Technical & Design Benefits</div>
+        <div class="content">
+          <p>
+            Implementing accessibility often leads to better overall design and
+            code quality.
+          </p>
+          <ul>
+            <li>📝 More semantic HTML and cleaner code structure</li>
+            <li>⌨️ Better keyboard navigation and device compatibility</li>
+            <li>⚡ Improved performance and faster loading times</li>
+            <li>🧩 More robust interfaces that work in various environments</li>
+            <li>🚀 Future-proofing for emerging technologies</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter section -->
+    <div class="section newsletter" id="newsletter">
+      <div class="newsletter-content">
+        <h3 class="newsletter-heading">Stay Updated with Accessibility News</h3>
+        <p>
+          Get the latest accessibility tips, resources, and updates delivered
+          straight to your inbox. Join over 10,000 developers and designers who
+          are building a more inclusive web.
+        </p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" />
+          <button aria-label="Start receiving updates">Subscribe Now</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer with links -->
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h2 class="footer-heading">Quick Links</h2>
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-section">
+          <h2 class="footer-heading">Resources</h2>
+          <a href="#">Documentation</a>
+          <a href="#">Tutorials</a>
+          <a href="#">Tools</a>
+          <a href="#">Blog</a>
+        </div>
+        <div class="footer-section">
+          <h2 class="footer-heading">Connect</h2>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Disclosure widgets
+      document.querySelectorAll(".disclosure-header").forEach((header) => {
+        header.addEventListener("click", () => {
+          header.classList.toggle("active");
+        });
+      });
+
+      // Emulate form submission
+      document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const input = form.querySelector("input");
+          if (input) {
+            input.value = "";
+          }
+          alert("Form submitted");
+        });
+      });
+    </script>
+  </body>
+</html>

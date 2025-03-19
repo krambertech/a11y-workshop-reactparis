@@ -1,0 +1,19 @@
+.avatar {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 100vmax;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+
+  &[data-size="small"] {
+    --size: 1.5rem;
+  }
+
+  &[data-size="medium"] {
+    --size: 3rem;
+  }
+
+  &[data-size="large"] {
+    --size: 4rem;
+  }
+}

@@ -1,0 +1,29 @@
+.emptyState {
+  --icon-color: var(--gray-8);
+  --text-color: var(--text);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+
+  &[data-variant="error"] {
+    --icon-color: var(--destructive-11);
+    --text-color: var(--destructive-12);
+  }
+
+  > svg {
+    width: 4rem;
+    height: 4rem;
+    color: var(--icon-color);
+  }
+
+  p {
+    text-align: center;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    color: var(--text-color);
+    max-width: 20rem;
+  }
+}

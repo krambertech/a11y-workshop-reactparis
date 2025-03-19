@@ -1,0 +1,92 @@
+.button {
+  all: unset;
+
+  --button-background: transparent;
+  --button-foreground: var(--text);
+  --button-border: transparent;
+
+  display: flex;
+  box-sizing: border-box;
+  border: none;
+  place-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  background-color: var(--button-background);
+  color: var(--button-foreground);
+  border: 1px solid var(--button-border);
+  min-height: 2.5rem;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: color-mix(
+      in oklch,
+      var(--button-background),
+      var(--text) 3%
+    );
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 1px;
+  }
+
+  &:active {
+    background-color: color-mix(
+      in oklch,
+      var(--button-background),
+      var(--text) 6%
+    );
+  }
+
+  &:disabled {
+    mouse-events: none;
+    keyboard-events: none;
+    cursor: not-allowed;
+  }
+
+  > svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+.icon {
+  padding: var(--space-sm);
+  aspect-ratio: 1;
+}
+
+/* variants */
+.primary {
+  --button-background: var(--gray-12);
+  --button-foreground: var(--gray-1);
+}
+
+.secondary {
+  --button-background: var(--background);
+  --button-foreground: var(--text);
+  --button-border: var(--border);
+}
+
+.ghost {
+  --button-background: transparent;
+  --button-foreground: var(--text);
+  --button-border: transparent;
+}
+
+.accent {
+  --button-background: var(--accent-9);
+  --button-foreground: var(--accent-1);
+}
+
+.destructive {
+  --button-background: var(--destructive-9);
+  --button-foreground: var(--destructive-1);
+}
+
+.highlight {
+  --button-foreground: var(--accent-11);
+}

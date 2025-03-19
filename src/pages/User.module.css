@@ -1,0 +1,26 @@
+.hero {
+  padding: var(--space-md);
+  margin-inline: calc(var(--space-md) * -1);
+  background-color: var(--accent-3);
+  border-radius: var(--radius);
+}
+
+/* ⇩ profile details styles */
+/* .profileDetails {
+  color: var(--text-secondary);
+  text-align: left;
+  margin: 0;
+
+  > span {
+    display: inline-block;
+    margin-right: var(--space-xs);
+
+    > svg {
+      display: inline-block;
+      margin-right: var(--space-xs);
+      width: 1.2em;
+      height: 1.2em;
+      vertical-align: -0.2em;
+    }
+  }
+} */

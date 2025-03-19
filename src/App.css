@@ -1,0 +1,19 @@
+#root {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-sm);
+
+  @media (width > 20rem) {
+    padding: var(--space-md);
+  }
+
+  @media (width > 40rem) {
+    padding: var(--space-lg);
+  }
+}
+
+#main-content {
+  padding-block: var(--space-lg);
+}

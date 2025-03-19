@@ -1,0 +1,337 @@
+/**
+  This is the main theme of the application and these variables need to be used everywhere in the styles
+**/
+
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/grass.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/crimson.css";
+@import "@radix-ui/colors/gray-dark.css";
+@import "@radix-ui/colors/grass-dark.css";
+@import "@radix-ui/colors/red-dark.css";
+@import "@radix-ui/colors/crimson-dark.css";
+@import "@radix-ui/colors/black-alpha.css";
+
+:root {
+  /* Accent scale */
+  --accent-1: var(--crimson-1);
+  --accent-2: var(--crimson-2);
+  --accent-3: var(--crimson-3);
+  --accent-4: var(--crimson-4);
+  --accent-5: var(--crimson-5);
+  --accent-6: var(--crimson-6);
+  --accent-7: var(--crimson-7);
+  --accent-8: var(--crimson-8);
+  --accent-9: var(--crimson-9);
+  --accent-10: var(--crimson-10);
+  --accent-11: var(--crimson-11);
+  --accent-12: var(--crimson-12);
+
+  --success-1: var(--grass-1);
+  --success-2: var(--grass-2);
+  --success-3: var(--grass-3);
+  --success-4: var(--grass-4);
+  --success-5: var(--grass-5);
+  --success-6: var(--grass-6);
+  --success-7: var(--grass-7);
+  --success-8: var(--grass-8);
+  --success-9: var(--grass-9);
+  --success-10: var(--grass-10);
+  --success-11: var(--grass-11);
+  --success-12: var(--grass-12);
+
+  --destructive-1: var(--red-1);
+  --destructive-2: var(--red-2);
+  --destructive-3: var(--red-3);
+  --destructive-4: var(--red-4);
+  --destructive-5: var(--red-5);
+  --destructive-6: var(--red-6);
+  --destructive-7: var(--red-7);
+  --destructive-8: var(--red-8);
+  --destructive-9: var(--red-9);
+  --destructive-10: var(--red-10);
+  --destructive-11: var(--red-11);
+  --destructive-12: var(--red-12);
+
+  --black: oklab(0, 0, 0);
+  --white: oklab(1, 0, 0);
+  --transparent: transparent;
+
+  --overlay: var(--black-a9);
+
+  --background: var(--gray-1);
+  --text: var(--gray-12);
+  --text-secondary: var(--gray-11);
+  --border: var(--gray-6);
+  --ring: var(--accent-9);
+
+  --radius: 4px;
+
+  --shadow-small: 0 1px 2px var(--black-a2), 0 1px 3px var(--black-a3);
+  --shadow-medium: 0 4px 8px var(--black-a5), 0 1px 3px var(--black-a6);
+
+  /* Spacing */
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 3rem;
+
+  /* Font size */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.3rem;
+  --font-size-2xl: 1.8rem;
+}
+
+/**
+ * Purely for convenience, there are some predefined global 
+ * styles that can be used in the app
+ */
+
+/* Global styles for form fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  align-items: flex-start;
+  width: 100%;
+  margin-block: var(--space-md);
+
+  label {
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.25;
+    text-align: left;
+  }
+}
+
+.caption,
+.error {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  text-align: left;
+
+  > svg {
+    display: inline-block;
+    vertical-align: -0.125em;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.25em;
+  }
+}
+
+.caption {
+  color: var(--text-secondary);
+}
+
+.error {
+  color: var(--destructive-11);
+}
+
+/* Global styles for containers */
+.container {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+/* Global styles for stacks */
+.stack {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Tailwing-like utility classes for flexbox and alignment, these are to simplify some common layouts, 
+while still giving ability to write custom css when needed */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-sm {
+  gap: var(--space-sm);
+}
+
+.gap-md {
+  gap: var(--space-md);
+}
+
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Visually hidden element */
+.sr-only {
+  position: absolute;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+/**
+ * Globally applied styles 
+ */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+}
+
+*,
+*::before,
+*::after {
+  /* More intuitive box sizing model by default */
+  box-sizing: border-box;
+}
+
+/* Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+}
+
+input,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+  width: 100%;
+  font-size: var(--font-size-md);
+  color: var(--text);
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  margin: 0;
+  color: var(--text);
+  text-align: left;
+}
+
+p {
+  font-size: var(--font-size-md);
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+ul {
+  margin: 0;
+  padding: 0 var(--space-lg);
+}

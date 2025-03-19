@@ -1,0 +1,43 @@
+.banner {
+  --banner-border: var(--border);
+  --banner-background: var(--background);
+  --banner-foreground: var(--text);
+
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  font-size: var(--font-size-md);
+  line-height: 1.5;
+  margin-block: var(--space-md);
+  text-align: left;
+  width: 100%;
+  border: 1px solid var(--banner-border);
+  background-color: var(--banner-background);
+  color: var(--banner-foreground);
+
+  &:has(svg) {
+    padding-left: calc(var(--space-sm) + 2rem + var(--space-sm));
+    position: relative;
+
+    > svg {
+      position: absolute;
+      display: inline-block;
+      left: var(--space-md);
+      top: calc(var(--space-md) + 0.2rem);
+      width: 1.2rem;
+      height: 1.2rem;
+      vertical-align: -0.5rem;
+    }
+  }
+
+  &[data-variant="error"] {
+    --banner-border: var(--destructive-6);
+    --banner-background: var(--destructive-2);
+    --banner-foreground: var(--destructive-11);
+  }
+
+  &[data-variant="success"] {
+    --banner-border: var(--success-6);
+    --banner-background: var(--success-2);
+    --banner-foreground: var(--success-11);
+  }
+}
